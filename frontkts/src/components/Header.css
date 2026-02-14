@@ -2,25 +2,54 @@ header {
     position: relative;
 }
 
+header > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* логотип слева, меню+корзина справа */
+    padding-right: 30px; /* общий отступ контента от правого края */
+}
+
 header .logo{
     font-weight: 600;
     font-size: 30px;
 }
+
 header ul.nav{
-    float: right;
     list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
 }
-header ul.nav li {
-    display: inline;
-    margin-left: 30px;
+
+header ul.nav li,
+header ul.nav .open-btn {
     cursor: pointer;
-    transition: opacity 500ms ease;
+    border: none;
+    background: transparent;
+    padding: 4px 0;
+    font: inherit;
+    color: inherit;
+    transition: opacity 200ms ease, color 200ms ease;
+}
+
+header ul.nav li:hover,
+header ul.nav .open-btn:hover {
+    opacity: 0.7;
+}
+
+header .cart-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 24px;
+    position: relative; /* чтобы выпадающая корзина привязалась к иконке */
 }
 
 header .shop-cart-button {
-    float: right;
     cursor: pointer;
-    transition: color, transform 500ms ease;
+    transition: color, transform 300ms ease;
 }
 header .shop-cart-button:hover,
 header .shop-cart-button.active{
@@ -31,7 +60,7 @@ header .shop-cart-button.active{
 header .shop-cart {
     position: absolute;
     top: 30px;
-    right: 30px;
+    right: 0; /* край выпадающей корзины рядом с иконкой */
     width: 450px;
     min-height: 100px;
     background: #fafafa;

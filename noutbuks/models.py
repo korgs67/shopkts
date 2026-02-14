@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 class Noutbuk(models.Model):
@@ -19,3 +20,17 @@ class Noutbuk(models.Model):
         ordering = ['link', 'nalichiye', 'description', 'img', '-price']
 
 
+class UserProfile(models.Model):
+    """
+    Профиль пользователя для дополнительных полей (например, телефон).
+    """
+
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="profile",
+    )
+    phone = models.CharField("Телефон", max_length=32, blank=True, default="")
+
+    def __str__(self):
+        return f"Profile({self.user_id})"

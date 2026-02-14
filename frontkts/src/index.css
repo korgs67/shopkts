@@ -17,17 +17,17 @@ main {
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
- }
+  gap: 20px;
+}
 main .container {
-  width: 20%;
-  margin-block: 10px 20px;
-  margin-left: 10%;
+  flex: 1 1 260px; /* базовая ширина карточки, но можно сжимать/расширять */
+  max-width: 320px;
+  min-width: 220px;
   margin-bottom: 40px;
   background: #f5f5f5;
   overflow: hidden;
   position: relative;
   padding-bottom: 30px;
-
 }
 main .country {
   text-align: center;
@@ -65,4 +65,13 @@ main .add-to-carz {
 
 main .add-to-carz:hover {
   transform: scale(1.5) translateY(-2px);
+}
+
+.description-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.description-link:hover .description {
+  text-decoration: underline;
 }

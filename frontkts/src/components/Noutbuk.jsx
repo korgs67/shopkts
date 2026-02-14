@@ -1,21 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Noutbuk extends React.Component {
-    render() {
-        return(
-        <div className='container'>
-            <div className='country'>
-                <img src={this.props.noutbuk.img} className='foto'/>
-                <h3 className='nalichiye'>{this.props.noutbuk.nalichiye}</h3>
-                <p className='description'>{this.props.noutbuk.description}</p>
-                <b className='price'>{this.props.noutbuk.price} р.</b>
-                <div className='add-to-carz' onClick={()=> this.props.onAdd(this.props.noutbuk)}>+</div>
+  render() {
+    const { noutbuk, onAdd } = this.props;
 
-
-            </div>
+    return (
+      <div className="container">
+        <div className="country">
+          <Link to={`/noutbuk/${noutbuk.id}`}>
+            <img src={noutbuk.img} alt={noutbuk.description} className="foto" />
+          </Link>
+          <h3 className="nalichiye">{noutbuk.nalichiye}</h3>
+          <Link to={`/noutbuk/${noutbuk.id}`} className="description-link">
+            <p className="description">{noutbuk.description}</p>
+          </Link>
+          <b className="price">{noutbuk.price} р.</b>
+          <div className="add-to-carz" onClick={() => onAdd(noutbuk)}>
+            +
+          </div>
         </div>
-    )
-    }
+      </div>
+    );
+  }
 }
 
-export default Noutbuk
+export default Noutbuk;
