@@ -115,8 +115,8 @@ export default function Header({
           <h2>Контакты</h2>
           <p>Если у вас есть вопросы по работе сайта или заказам:</p>
           <ul>
-            <li>Телефон: +375 (29) 000‑00‑00</li>
-            <li>E‑mail: info@kts-shop.local</li>
+            <li>Телефон: +375 (29) 325‑04‑35</li>
+            <li>E‑mail: info@kts-shop.by</li>
           </ul>
         </DialogContent>
       </Dialog>
