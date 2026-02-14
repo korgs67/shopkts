@@ -11,8 +11,7 @@ export default function Header() {
                 <ul className='nav'>
                     <li>О нас</li>
                     <li>Контакты</li>
-                    <li>Кабинет</li>
-                    <button className='open-btn'> Открыть модальное оно</button>
+                    <button className='open-btn'> Кабинет</button>
                 </ul>
                 <FaShoppingCart onClick={() => setCartOpen(cartOpen =!cartOpen)}
                                 className={`shop-cart-button ${cartOpen && 'active'}`}/>
